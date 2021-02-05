@@ -1,0 +1,34 @@
+<div class="card" style="width: 30%; margin: 6% 33%;">
+    <div class="card-body">
+        <div class="text-center">
+            <h2>Envio de status por meio da blockchain</h2>
+            <p>Insira abaixo o status do pedido</p>
+        </div><br>
+        <form action="/" method="POST">
+            <div class="d-grid gap-2">
+                <div class="input-group">
+                <select class="custom-select" name="msg">
+                    <option selected>Status...</option>
+                    <option value="Pedido recebido">Pedido recebido</option>
+                    <option value="Aguardando pagamento">Aguardando pagamento</option>
+                    <option value="Pagamento aprovado">Pagamento aprovado</option>
+                    <option value="Em produção">Em produção</option>
+                    <option value="Nota fiscal emitida">Nota fiscal emitida</option>
+                    <option value="Pedido enviado">Pedido enviado</option>
+                    <option value="Pedido entregue">Pedido entregue</option>
+                </select>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Enviar</button>
+                </div>
+            </div>
+            </div><br>
+            <div class="mb-3">
+                <label>Último status enviado: {{msg}}</label>
+            </div>
+            <div class="mb-3">
+                <label>Número do bloco: {{number}}</label>
+            </div>
+
+        </form>
+    </div>
+</div>

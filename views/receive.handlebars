@@ -1,0 +1,91 @@
+<body>
+    <div class="card" style="width: 70%; margin: 6% 15%;">
+        <div class="card-body">
+            <div class="text-center">
+                <h2>Acompanhamento do pedido por meio da blockchain</h2>
+                <p>Confira abaixo o status do seu pedido</p>
+            </div><br>
+            <form action="/receive" method="POST">
+                <div class="mb-3">
+                    <input id="numero" class="form-control" type="hidden" name="number" value="{{numero}}">
+                    <input id="message" class="form-control" type="hidden" name="number" value="{{msg}}">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm">
+                            <img style="width: 97%;" src="fluxo.jpg">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm" style="padding-left: 3%;">
+                            <div style="width: 90%;">
+                                <div class="progress">
+                                    <div id="bar" class="progress-bar bg-success" role="progressbar" aria-valuemin="0"
+                                        aria-valuemax="100">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div style="padding-left: 4%;" class="col-sm">
+                            <label style="width:50% ;">Pedido recebido</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:70% ;">Aguardando pagamento</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:70% ;">Pagamento aprovado</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:70% ;">Em produção</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:70% ;">Nota fiscal emitida</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:50% ;">Pedido enviado</label>
+                        </div>
+                        <div class="col-sm">
+                            <label style="width:50% ;">Pedido entregue</label>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    window.onload = function () {
+                        var bar = document.getElementById('bar');
+                        var message = document.getElementById("message").value
+
+                        switch (message) {
+                            case 'Pedido recebido':
+                                bar.style.width = "4%"
+                                break;
+                            case 'Aguardando pagamento':
+                                bar.style.width = "22%"
+                                break;
+                            case 'Pagamento aprovado':
+                                bar.style.width = "38%"
+                                break;
+                            case 'Em produção':
+                                bar.style.width = "55%"
+                                break;
+                            case 'Nota fiscal emitida':
+                                bar.style.width = "70%"
+                                break;
+                            case 'Pedido enviado':
+                                bar.style.width = "85%"
+                                break;
+                            case 'Pedido entregue':
+                                bar.style.width = "100%"
+                                break;
+                           
+                            default:
+                                bar.style.width = "0%"  
+                        }
+                    }
+                </script>
+            </form>
+        </div>
+    </div>
+
+</body>
